@@ -10,7 +10,7 @@ public class TestController {
     @GetMapping
     public ResponseEntity<String> getText(@RequestParam boolean show) {
         if (show) {
-            return ResponseEntity.ok("Тестовые данные");
+            return ResponseEntity.ok("Test response");
         } else {
             return ResponseEntity.noContent().build();
         }
