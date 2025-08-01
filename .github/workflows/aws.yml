@@ -68,7 +68,7 @@ jobs:
           docker build -t $IMAGE_URI .
           docker push $IMAGE_URI
         env:
-          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+          AWS_ACCOUNT_ID: ${{ env.AWS_ACCOUNT_ID }}
 
       - name: Render new ECS task definition
         id: render
