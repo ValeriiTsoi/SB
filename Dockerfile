@@ -1,4 +1,13 @@
-FROM amazoncorretto:21-alpine
+FROM eclipse-temurin:17-jdk-alpine as BUILD
+
+WORKDIR /app
+
+COPY pom.xml .
+COPY src ./src
+
+RUN mvn clean package -DskipTests
+
+FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 
