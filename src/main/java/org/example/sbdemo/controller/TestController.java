@@ -9,8 +9,8 @@ public class TestController {
 
     @GetMapping
     public ResponseEntity<String> getText(@RequestParam boolean show) {
-        if (show) {
-            return ResponseEntity.ok("Thi is test response!");
+        if (Boolean.TRUE.equals(show)) {
+            return ResponseEntity.ok("\n Thi is test response! \n");
         } else {
             return ResponseEntity.noContent().build();
         }
