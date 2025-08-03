@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.*;
 public class TestController {
 
     @GetMapping
-    public ResponseEntity<String> getText(@RequestParam boolean show) {
+    public ResponseEntity<String> getText(@RequestParam(required = false) {
         if (Boolean.TRUE.equals(show)) {
-            return ResponseEntity.ok("\n Thi is test response! \n");
+            return ResponseEntity.ok("\n This is test response! \n");
         } else {
-            return ResponseEntity.noContent().build();
+            return ResponseEntity.ok("\n Params are not correct. use: /test?show=true \n");
+#            return ResponseEntity.noContent().build();
         }
     }
 }
